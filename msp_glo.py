@@ -27,6 +27,7 @@ import resources
 # Import the code for the dialog
 from msp_glo_dialog import AQGeocodageDialog
 import os.path
+from qgis.gui import QgsMessageBar
 
 
 class AQGeocodage:
@@ -186,8 +187,16 @@ class AQGeocodage:
         self.dlg.show()
         # Run the dialog event loop
         result = self.dlg.exec_()
+
         # See if OK was pressed
-        if result:
-            # Do something useful here - delete the line containing pass and
-            # substitute with your code.
-            pass
+        if result == 1:
+            # A t'on une adresse
+            if self.dlg.lineEdit.text():
+                self.iface.messageBar().pushMessage("Information", self.dlg.lineEdit.text(), level=QgsMessageBar.INFO, duration=3)
+                # on prepare la requete
+
+                # on envoie la requete
+            else:
+                self.iface.messageBar().pushMessage("Erreur", "Vous devez entrer une adresse", level=QgsMessageBar.CRITICAL, duration=3)
+        else:
+            self.iface.messageBar().pushMessage("Information", "Opération annulée par l'usager", level=QgsMessageBar.WARNING, duration=1)
