@@ -1,0 +1,39 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Adresse Quebec Geocodage
+qgisMinimumVersion=2.8
+description=Localiser une adresse contenue dans Adresse Quebec
+version=0.1
+author=Steve Toutant/INSPQ
+email=steve.toutant@inspq.qc.ca
+
+about=Ce plugin utilise le service web du Ministère de la sécurité publique afin de localiser une adresse contenue dans la géobase Adresse Québec
+
+tracker=https://github.com/stetou/AQgeocoder/issues
+repository=https://github.com/stetou/AQgeocoder.git
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=geocoding, webservice, quebec
+
+homepage=https://github.com/stetou/AQgeocoder/blob/master/README.md
+category=Plugins
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
